@@ -1,0 +1,21 @@
+# Ignore node_modules and logs
+node_modules/
+*.log
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore other unnecessary files
+*.tmp
+*.bak
+*.swp
+*.swo
+*.lock
+
+# Ignore parent directory files
+../../../*

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NfonoApp - Teacher Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>NfonoApp</h1>
+                <p>Teacher Management</p>
+            </div>
+            <nav class="nav">
+                <div class="nav-item active" onclick="showSection('dashboard', this)">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <rect x="3" y="3" width="7" height="7" rx="1" />
+                        <rect x="14" y="3" width="7" height="7" rx="1" />
+                        <rect x="3" y="14" width="7" height="7" rx="1" />
+                        <rect x="14" y="14" width="7" height="7" rx="1" />
+                    </svg>
+                    Dashboard
+                </div>
+                <div class="nav-item" onclick="showSection('schools', this)">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3" />
+                    </svg>
+                    Schools
+                </div>
+                <div class="nav-item" onclick="showSection('classes', this)">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                    Classes
+                </div>
+                <div class="nav-item" onclick="showSection('students', this)">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                    Students
+                </div>
+                <div class="nav-item" onclick="showSection('grades', this)">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14,2 14,8 20,8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                        <polyline points="10,9 9,9 8,9" />
+                    </svg>
+                    Grades
+                </div>
+                <div class="nav-item" onclick="showSection('topics', this)">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                    </svg>
+                    Topics
+                </div>
+                <div class="nav-item" onclick="showSection('todo', this)">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M9 11l3 3L22 4" />
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    To-Do
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <p>v1.0.0</p>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+            <div class="topbar">
+                <div id="topbar-title">
+                    <h2>Dashboard</h2>
+                    <p id="topbar-sub">Good morning — here's your overview</p>
+                </div>
+            </div>
+
+            <div class="content">
+
+                <!-- DASHBOARD -->
+                <div id="section-dashboard">
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-icon" style="background:#e6f1fb;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#185fa5"
+                                    stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                    <circle cx="12" cy="7" r="4" />
+                                </svg>
+                            </div>
+                            <div class="kpi-value">142</div>
+                            <div class="kpi-label">Total students</div>
+                            <div class="kpi-change positive">+8 this term</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-icon" style="background:#eaf3de;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b6d11"
+                                    stroke-width="2">
+                                    <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11" />
+                                </svg>
+                            </div>
+                            <div class="kpi-value">3</div>
+                            <div class="kpi-label">Schools</div>
+                            <div class="kpi-change neutral">Active this year</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-icon" style="background:#eeedfe;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#534ab7"
+                                    stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                            </div>
+                            <div class="kpi-value">11</div>
+                            <div class="kpi-label">Classes</div>
+                            <div class="kpi-change neutral">Across all schools</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-icon" style="background:#faeeda;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#854f0b"
+                                    stroke-width="2">
+                                    <path d="M9 11l3 3L22 4" />
+                                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                                </svg>
+                            </div>
+                            <div class="kpi-value">5</div>
+                            <div class="kpi-label">Pending to-dos</div>
+                            <div class="kpi-change warning">2 due today</div>
+                        </div>
+                    </div>
+
+                    <div class="cards-row">
+                        <div class="info-card">
+                            <h3>Pending tasks</h3>
+                            <div class="task-item">
+                                <div class="task-dot red"></div>
+                                <span class="task-text">Grade 4B math exams</span>
+                                <span class="task-tag red">Today</span>
+                            </div>
+                            <div class="task-item">
+                                <div class="task-dot red"></div>
+                                <span class="task-text">Submit attendance — Escola Nova</span>
+                                <span class="task-tag red">Today</span>
+                            </div>
+                            <div class="task-item">
+                                <div class="task-dot amber"></div>
+                                <span class="task-text">Prepare science topics for 6A</span>
+                                <span class="task-tag amber">Tomorrow</span>
+                            </div>
+                            <div class="task-item">
+                                <div class="task-dot green"></div>
+                                <span class="task-text">Parent meeting preparation</span>
+                                <span class="task-tag green">This week</span>
+                            </div>
+                            <div class="task-item">
+                                <div class="task-dot green"></div>
+                                <span class="task-text">Update curriculum — 5th grade</span>
+                                <span class="task-tag green">This week</span>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>Schools overview</h3>
+                            <div class="school-item">
+                                <div class="school-avatar blue">EN</div>
+                                <div>
+                                    <div class="school-name">Escola Nova</div>
+                                    <div class="school-sub">4 classes · 52 students</div>
+                                </div>
+                            </div>
+                            <div class="school-item">
+                                <div class="school-avatar purple">CP</div>
+                                <div>
+                                    <div class="school-name">Col·legi Primavera</div>
+                                    <div class="school-sub">4 classes · 48 students</div>
+                                </div>
+                            </div>
+                            <div class="school-item">
+                                <div class="school-avatar green">SM</div>
+                                <div>
+                                    <div class="school-name">Sant Martí</div>
+                                    <div class="school-sub">3 classes · 42 students</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SCHOOLS -->
+                <div id="section-schools" style="display:none;" class="placeholder-section">
+                    <div class="placeholder">
+                        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11" />
+                        </svg>
+                        <h3>Schools</h3>
+                        <p>Your schools will appear here</p>
+                    </div>
+                </div>
+
+                <!-- CLASSES -->
+                <div id="section-classes" style="display:none;" class="placeholder-section">
+                    <div class="placeholder">
+                        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                        <h3>Classes</h3>
+                        <p>Your classes will appear here</p>
+                    </div>
+                </div>
+
+                <!-- STUDENTS -->
+                <div id="section-students" style="display:none;" class="placeholder-section">
+                    <div class="placeholder">
+                        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                        <h3>Students</h3>
+                        <p>Your students will appear here</p>
+                    </div>
+                </div>
+
+                <!-- GRADES -->
+                <div id="section-grades" style="display:none;" class="placeholder-section">
+                    <div class="placeholder">
+                        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14,2 14,8 20,8" />
+                        </svg>
+                        <h3>Grades</h3>
+                        <p>Your grades will appear here</p>
+                    </div>
+                </div>
+
+                <!-- TOPICS -->
+                <div id="section-topics" style="display:none;" class="placeholder-section">
+                    <div class="placeholder">
+                        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                        </svg>
+                        <h3>Topics</h3>
+                        <p>Your curriculum topics will appear here</p>
+                    </div>
+                </div>
+
+                <!-- TO-DO -->
+                <div id="section-todo" style="display:none;" class="placeholder-section">
+                    <div class="placeholder">
+                        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M9 11l3 3L22 4" />
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                        </svg>
+                        <h3>To-Do</h3>
+                        <p>Your tasks will appear here</p>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>
