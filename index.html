@@ -1,11 +1,17 @@
-<section id="schools">
-    <h2>School Management</h2>
-    <form id="addSchoolForm">
-        <input type="text" id="schoolName" placeholder="School Name" required />
-        <input type="text" id="schoolAddress" placeholder="School Address" required />
+<div id="section-schools">
+    <h2>Schools Management</h2>
+    <form id="add-school-form">
+        <div>
+            <label for="school-name">School Name:</label>
+            <input type="text" id="school-name" name="school-name" required>
+        </div>
+        <div>
+            <label for="school-address">Address:</label>
+            <input type="text" id="school-address" name="school-address" required>
+        </div>
         <button type="submit">Add School</button>
     </form>
-    <table id="schoolsTable">
+    <table id="schools-table">
         <thead>
             <tr>
                 <th>Name</th>
@@ -14,17 +20,35 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Dynamically populated rows will go here -->
+            <!-- Existing schools will be dynamically populated here -->
         </tbody>
     </table>
-    <div id="editSchoolModal" style="display:none;">
-        <h3>Edit School</h3>
-        <form id="editSchoolForm">
-            <input type="hidden" id="editSchoolId" />
-            <input type="text" id="editSchoolName" required />
-            <input type="text" id="editSchoolAddress" required />
+    <div id="edit-modal" style="display:none;">
+        <h2>Edit School</h2>
+        <form id="edit-school-form">
+            <div>
+                <label for="edit-school-name">School Name:</label>
+                <input type="text" id="edit-school-name" name="edit-school-name" required>
+            </div>
+            <div>
+                <label for="edit-school-address">Address:</label>
+                <input type="text" id="edit-school-address" name="edit-school-address" required>
+            </div>
             <button type="submit">Save Changes</button>
-            <button type="button" onclick="closeModal()">Cancel</button>
         </form>
     </div>
-</section>
+</div>
+<script>
+    document.getElementById('add-school-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Logic to add a new school
+    });
+
+    function openEditModal(school) {
+        // Logic to populate and open the edit modal
+    }
+
+    function deleteSchool(schoolId) {
+        // Logic to delete a school
+    }
+</script>
